@@ -35,13 +35,13 @@ RegisterNetEvent('mms-shipmissions:client:hafenmenu', function()
             options = {
                 {
                     title = ('Starte Mission!'),
-                    description = ('Starte eine Schiffmission' ),
+                    description = ('Starte eine Schiffsmission' ),
                     icon = 'fas fa-circle',
                     event = 'mms-shipmissions:client:getmission',
                 },
                 {
-                    title = ('Starte Mission!'),
-                    description = ('Starte eine Schiffmission' ),
+                    title = ('Beende Mission!'),
+                    description = ('Beende die Schiffsmission' ),
                     icon = 'fas fa-circle',
                     event = 'mms-shipmissions:client:finishmission',
                 },
@@ -75,7 +75,7 @@ end)
 RegisterNetEvent('mms-shipmissions:client:finishmission')
 AddEventHandler('mms-shipmissions:client:finishmission', function()
     if shipmissionactive == 0 then
-        RSGCore.Functions.Notify('Du hast Aktuell keine Quest!', 'error')
+        RSGCore.Functions.Notify('Du hast Aktuell keine Mission!', 'error')
     elseif shipmissionactive >= 1 and aufgabe1 == 1 and aufgabe2 == 1 and aufgabe3 == 1 then
         DeletePrompts()
         DeleteVehicle(boat)
@@ -95,9 +95,9 @@ RegisterNetEvent('mms-shipmissions:client:abortmission')
 AddEventHandler('mms-shipmissions:client:abortmission', function()
     if shipmissionactive <=1 then
         if shipmissionactive == 0 then
-            RSGCore.Functions.Notify('Du hast Aktuell keine Quest.', 'error')
+            RSGCore.Functions.Notify('Du hast Aktuell keine Mission.', 'error')
         elseif shipmissionactive >= 1 then
-        RSGCore.Functions.Notify('Du brichst deine Aktuelle Quest ab!', 'error')
+        RSGCore.Functions.Notify('Du brichst deine Aktuelle Mission ab!', 'error')
         shipmissionactive = 0
         aufgabe1 = 0
         aufgabe2 = 0
@@ -145,6 +145,7 @@ function StartMission()
     end
 end
 
+-- Mission 1
 function Mission1()
     SpawnBoat()
     Citizen.Wait(500)
@@ -193,7 +194,455 @@ function Mission1()
         AllowSonarBlips(blipaufgabe3,true)
 end
 
+-- Mission 2
+function Mission2()
 
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission2Aufgabe1, Config.Mission2Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission2Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission2Aufgabe2, Config.Mission2Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission2Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission2Aufgabe3, Config.Mission2Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission2Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 3
+function Mission3()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission3Aufgabe1, Config.Mission3Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission3Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission3Aufgabe2, Config.Mission3Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission3Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission3Aufgabe3, Config.Mission3Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission3Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 4
+function Mission4()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission4Aufgabe1, Config.Mission4Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission4Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission4Aufgabe2, Config.Mission4Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission4Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission4Aufgabe3, Config.Mission4Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission4Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 5
+function Mission5()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission5Aufgabe1, Config.Mission5Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission5Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission5Aufgabe2, Config.Mission5Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission5Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission5Aufgabe3, Config.Mission5Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission5Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 6
+function Mission6()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission6Aufgabe1, Config.Mission6Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission6Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission6Aufgabe2, Config.Mission6Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission6Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission6Aufgabe3, Config.Mission6Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission6Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 7
+function Mission7()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission7Aufgabe1, Config.Mission7Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission7Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission7Aufgabe2, Config.Mission7Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission7Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission7Aufgabe3, Config.Mission7Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission7Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 8
+function Mission8()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission8Aufgabe1, Config.Mission8Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission8Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission8Aufgabe2, Config.Mission8Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission8Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission8Aufgabe3, Config.Mission8Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission8Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 9
+function Mission9()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission9Aufgabe1, Config.Mission9Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission9Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission9Aufgabe2, Config.Mission9Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission9Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission9Aufgabe3, Config.Mission9Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission9Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
+
+-- Mission 10
+function Mission10()
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission10Aufgabe1, Config.Mission10Coords1, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission10Aufgabe1desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe1',
+        args = {},
+    })
+    
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe1, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.Blipname1)
+        SetBlipFlashes(blipaufgabe1, true)
+        AllowSonarBlips(blipaufgabe1,true)
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission10Aufgabe2, Config.Mission10Coords2, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission10Aufgabe2desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe2',
+        args = {},
+    })
+        
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe2, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.Blipname2)
+        SetBlipFlashes(blipaufgabe2, true)
+        AllowSonarBlips(blipaufgabe2,true)
+
+
+
+    Citizen.Wait(500)
+    exports['rsg-core']:createPrompt(Config.Mission10Aufgabe3, Config.Mission10Coords3, RSGCore.Shared.Keybinds['J'],  (' ') .. Config.Mission10Aufgabe3desc, {
+        type = 'client',
+        event = 'mms-questsystem:client:aufgabe3',
+        args = {},
+    })
+            
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey('blip_code_waypoint'), true)
+        SetBlipScale(blipaufgabe3, 5.5)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.Blipname3)
+        SetBlipFlashes(blipaufgabe3, true)
+        AllowSonarBlips(blipaufgabe3,true)
+
+end
 
 
 
