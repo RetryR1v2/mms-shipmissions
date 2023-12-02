@@ -14,18 +14,14 @@ Config.hafen = {
     -- add more as required
 }
 
-Config.Questtime = 5000  ------!!!DO NOT TOUCH!!!-------
+Config.Missiontime = 5000  ------!!!DO NOT TOUCH!!!-------
 
 ---------------Reward Settings---------------
 Config.Dynamicrewards = true  --- Wenn true dann werden min - max Preise genommen WEnn False Wird nur der Noramle Preis genommen
 
-Config.Silberdollar = 5
-Config.Silberdollarmin = 5
-Config.Silberdollarmax = 10
-
 Config.Money = 5
-Config.Moneymin = 5
-Config.Moneymax = 10
+Config.Moneymin = 10
+Config.Moneymax = 20
 
 
 
