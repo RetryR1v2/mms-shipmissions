@@ -42,7 +42,7 @@ RegisterNetEvent('mms-shipmissions:client:hafenmenu', function()
                 {
                     title = ('Beende Mission!'),
                     description = ('Beende die Schiffsmission' ),
-                    icon = 'fas fa-circle',
+                    icon = 'fas fa-check',
                     event = 'mms-shipmissions:client:finishmission',
                 },
                 {
