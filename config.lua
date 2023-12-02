@@ -14,7 +14,7 @@ Config.hafen = {
     -- add more as required
 }
 
-Config.Missiontime = 5000  ------!!!DO NOT TOUCH!!!-------
+Config.Missiontime = 10000  ------!!!DO NOT TOUCH!!!-------
 
 ---------------Reward Settings---------------
 Config.Dynamicrewards = true  --- Wenn true dann werden min - max Preise genommen WEnn False Wird nur der Noramle Preis genommen

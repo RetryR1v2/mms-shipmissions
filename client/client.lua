@@ -655,21 +655,21 @@ end
 RegisterNetEvent('mms-shipmissions:client:aufgabe1')
 AddEventHandler('mms-shipmissions:client:aufgabe1', function()
     if aufgabe1 == 0 then
-        RSGCore.Functions.Progressbar('Netze Auswerfen','Du Wirfst die Netze aus!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Auswerfen','Du Wirfst das Netz aus!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         end)
-        RSGCore.Functions.Progressbar('Netze Einholen','Du holst die Netze ein!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Einholen','Du holst das Netz ein!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         end)
-        RSGCore.Functions.Progressbar('Netze Leermachen','Du machst das Netzt leer!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Leermachen','Du machst das Netz leer!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
@@ -694,21 +694,21 @@ end)
 RegisterNetEvent('mms-shipmissions:client:aufgabe2')
 AddEventHandler('mms-shipmissions:client:aufgabe2', function()
     if aufgabe2 == 0 then
-        RSGCore.Functions.Progressbar('Netze Auswerfen','Du Wirfst die Netze aus!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Auswerfen','Du Wirfst das Netz aus!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         end)
-        RSGCore.Functions.Progressbar('Netze Einholen','Du holst die Netze ein!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Einholen','Du holst das Netz ein!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         end)
-        RSGCore.Functions.Progressbar('Netze Leermachen','Du machst das Netzt leer!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Leermachen','Du machst das Netz leer!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
@@ -733,21 +733,21 @@ end)
 RegisterNetEvent('mms-shipmissions:client:aufgabe3')
 AddEventHandler('mms-shipmissions:client:aufgabe3', function()
     if aufgabe3 == 0 then
-        RSGCore.Functions.Progressbar('Netze Auswerfen','Du Wirfst die Netze aus!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Auswerfen','Du Wirfst das Netz aus!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         end)
-        RSGCore.Functions.Progressbar('Netze Einholen','Du holst die Netze ein!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Einholen','Du holst das Netz ein!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         end)
-        RSGCore.Functions.Progressbar('Netze Leermachen','Du machst das Netzt leer!',Config.Missiontime, false, true, {
+        RSGCore.Functions.Progressbar('Netze Leermachen','Du machst das Netz leer!',Config.Missiontime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
