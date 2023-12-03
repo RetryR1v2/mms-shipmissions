@@ -191,7 +191,7 @@ function Mission1Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission1Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission1Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission1Coords1)
                         end
@@ -217,7 +217,7 @@ function Mission1Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission1Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission1Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission1Coords2)
                         end
@@ -243,7 +243,7 @@ function Mission1Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission1Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission1Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission1Coords3)
                         end
@@ -273,7 +273,7 @@ function Mission2Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission2Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission2Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission2Coords1)
                         end
@@ -299,7 +299,7 @@ function Mission2Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission2Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission2Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission2Coords2)
                         end
@@ -325,7 +325,7 @@ function Mission2Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission2Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission2Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission2Coords3)
                         end
@@ -354,7 +354,7 @@ function Mission3Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission3Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission3Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission3Coords1)
                         end
@@ -380,7 +380,7 @@ function Mission3Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission3Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission3Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission3Coords2)
                         end
@@ -406,7 +406,7 @@ function Mission3Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission3Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission3Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission3Coords3)
                         end
@@ -435,7 +435,7 @@ function Mission4Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission4Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission4Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission4Coords1)
                         end
@@ -462,7 +462,7 @@ function Mission4Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission4Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission4Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission4Coords2)
                         end
@@ -488,7 +488,7 @@ function Mission4Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission4Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission4Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission4Coords3)
                         end
@@ -517,7 +517,7 @@ function Mission5Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission5Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission5Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission5Coords1)
                         end
@@ -543,7 +543,7 @@ function Mission5Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission5Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission5Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission5Coords2)
                         end
@@ -570,7 +570,7 @@ function Mission5Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission5Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission5Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission5Coords3)
                         end
@@ -599,7 +599,7 @@ function Mission6Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission6Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission6Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission6Coords1)
                         end
@@ -625,7 +625,7 @@ function Mission6Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission6Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission6Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission6Coords2)
                         end
@@ -652,7 +652,7 @@ function Mission6Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission6Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission6Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission6Coords3)
                         end
@@ -682,7 +682,7 @@ function Mission7Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission7Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission7Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission7Coords1)
                         end
@@ -708,7 +708,7 @@ function Mission7Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission7Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission7Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission7Coords2)
                         end
@@ -735,7 +735,7 @@ function Mission7Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission7Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission7Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission7Coords3)
                         end
@@ -765,7 +765,7 @@ function Mission8Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission8Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission8Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission8Coords1)
                         end
@@ -792,7 +792,7 @@ function Mission8Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission8Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission8Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission8Coords2)
                         end
@@ -819,7 +819,7 @@ function Mission8Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission8Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission8Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission8Coords3)
                         end
@@ -849,7 +849,7 @@ function Mission9Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
-                    if #(boatpos - Config.Mission9Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission9Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission9Coords1)
                         end
@@ -877,7 +877,7 @@ function Mission9Part2()
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
                
-                    if #(boatpos - Config.Mission9Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission9Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission9Coords2)
                         end
@@ -905,7 +905,7 @@ function Mission9Part3()
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
                 
-                    if #(boatpos - Config.Mission9Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission9Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission9Coords3)
                         end
@@ -937,7 +937,7 @@ function Mission10Part1()
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
                 
-                    if #(boatpos - Config.Mission10Coords1) < 5.0 then
+                    if #(boatpos - Config.Mission10Coords1) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission10Coords1)
                         end
@@ -965,7 +965,7 @@ function Mission10Part2()
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
                 
-                    if #(boatpos - Config.Mission10Coords2) < 5.0 then
+                    if #(boatpos - Config.Mission10Coords2) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission10Coords2)
                         end
@@ -993,7 +993,7 @@ function Mission10Part3()
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
             
-                    if #(boatpos - Config.Mission10Coords3) < 5.0 then
+                    if #(boatpos - Config.Mission10Coords3) < 7.5 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission10Coords3)
                         end
