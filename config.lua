@@ -1,5 +1,5 @@
 Config = {}
-
+Config.testpromptcoords = vector3(-703.30, -1242.89, 44.76)
 --Setup as many places as you want Brennerei
 Config.hafen = {
     { 

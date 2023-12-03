@@ -51,13 +51,14 @@ RegisterNetEvent('mms-shipmissions:client:hafenmenu', function()
                     description = ('Breche die Mission ab!' ),
                     icon = 'fas fa-x',
                     event = 'mms-shipmissions:client:abortmission',
-                },
-                
+                },      
             }
         }
     )
     lib.showContext('hafenmenu')
 end)
+
+
 
 
 
@@ -80,6 +81,8 @@ AddEventHandler('mms-shipmissions:client:finishmission', function()
     elseif shipmissionactive >= 1 and aufgabe1 == 1 and aufgabe2 == 1 and aufgabe3 == 1 then
         DeletePrompts()
         DeleteVehicle(boat)
+        SpawnedBoat = nil
+        boatSpawned = false
         reward = shipmissionactive
         aufgabe1 = 0
         aufgabe2 = 0
@@ -103,6 +106,9 @@ AddEventHandler('mms-shipmissions:client:abortmission', function()
         aufgabe1 = 0
         aufgabe2 = 0
         aufgabe3 = 0
+        DeleteVehicle(boat)
+        SpawnedBoat = nil
+        boatSpawned = false
         DeletePrompts()
         if DoesBlipExist(blipaufgabe1) then
             RemoveBlip(blipaufgabe1)
