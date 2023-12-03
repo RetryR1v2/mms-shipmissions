@@ -19,7 +19,7 @@ Config.Missiontime = 10000  ------!!!DO NOT TOUCH!!!-------
 ---------------Reward Settings---------------
 Config.Dynamicrewards = true  --- Wenn true dann werden min - max Preise genommen WEnn False Wird nur der Noramle Preis genommen
 
-Config.Money = 5
+Config.Money = 10
 Config.Moneymin = 10
 Config.Moneymax = 20
 

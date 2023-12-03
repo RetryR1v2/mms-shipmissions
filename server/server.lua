@@ -29,7 +29,9 @@ local function CheckVersion()
     end)
 end
 
-
+-----------------------------------------------------------------------
+-- reward system
+-----------------------------------------------------------------------
 
 RegisterNetEvent('mms-shipmissions:server:rewards', function(reward)
     if reward >= 1 then
