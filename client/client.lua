@@ -167,6 +167,7 @@ end
 
 -- Mission 1
 function Mission1Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -183,7 +184,6 @@ function Mission1Part1()
                 local boatpos = GetEntityCoords(boat, true)
                     if #(boatpos - Config.Mission1Coords1) < 5.0 then
                         if showgps == true then
-                            DrawText3D(boatpos.x,boatpos.y,boatpos.z + 0.98,'Gehe Fische Fangen!')
                             ClearGpsMultiRoute(Config.Mission1Coords1)
                         end
                         missionactive = false
@@ -194,6 +194,7 @@ function Mission1Part1()
 end
 
 function Mission1Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission1Coords2)
@@ -219,7 +220,7 @@ function Mission1Part2()
 end
 
 function Mission1Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission1Coords3)
@@ -248,6 +249,7 @@ end
 
 -- Mission 2
 function Mission2Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -274,6 +276,7 @@ function Mission2Part1()
 end
 
 function Mission2Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission2Coords2)
@@ -299,7 +302,7 @@ function Mission2Part2()
 end
 
 function Mission2Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission2Coords3)
@@ -325,8 +328,9 @@ function Mission2Part3()
 end
 
 
--- Mission 1
+-- Mission 3
 function Mission3Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -354,6 +358,7 @@ end
 
 function Mission3Part2()
     Citizen.Wait(500)
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission3Coords2)
         SetGpsMultiRouteRender(true)
@@ -378,7 +383,7 @@ function Mission3Part2()
 end
 
 function Mission3Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission3Coords3)
@@ -404,8 +409,9 @@ function Mission3Part3()
 end
 
 
--- Mission 1
+-- Mission 4
 function Mission4Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -433,6 +439,7 @@ function Mission4Part1()
 end
 
 function Mission4Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission4Coords2)
@@ -458,7 +465,7 @@ function Mission4Part2()
 end
 
 function Mission4Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission4Coords3)
@@ -484,8 +491,9 @@ function Mission4Part3()
 end
 
 
--- Mission 1
+-- Mission 5
 function Mission5Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -512,6 +520,7 @@ function Mission5Part1()
 end
 
 function Mission5Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission5Coords2)
@@ -538,7 +547,7 @@ function Mission5Part2()
 end
 
 function Mission5Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission5Coords3)
@@ -564,8 +573,9 @@ function Mission5Part3()
 end
 
 
--- Mission 1
+-- Mission 6
 function Mission6Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -592,6 +602,7 @@ function Mission6Part1()
 end
 
 function Mission6Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission6Coords2)
@@ -618,7 +629,7 @@ function Mission6Part2()
 end
 
 function Mission6Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission6Coords3)
@@ -645,8 +656,9 @@ function Mission6Part3()
 end
 
 
--- Mission 1
+-- Mission 7
 function Mission7Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -673,6 +685,7 @@ function Mission7Part1()
 end
 
 function Mission7Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission7Coords2)
@@ -699,7 +712,7 @@ function Mission7Part2()
 end
 
 function Mission7Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission7Coords3)
@@ -726,8 +739,9 @@ function Mission7Part3()
 end
 
 
--- Mission 1
+-- Mission 8
 function Mission8Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -755,6 +769,7 @@ function Mission8Part1()
 end
 
 function Mission8Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission8Coords2)
@@ -781,7 +796,7 @@ function Mission8Part2()
 end
 
 function Mission8Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission8Coords3)
@@ -808,8 +823,9 @@ function Mission8Part3()
 end
 
 
--- Mission 1
+-- Mission 9
 function Mission9Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -837,6 +853,7 @@ function Mission9Part1()
 end
 
 function Mission9Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission9Coords2)
@@ -864,7 +881,7 @@ function Mission9Part2()
 end
 
 function Mission9Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission9Coords3)
@@ -893,8 +910,9 @@ function Mission9Part3()
 end
 
 
--- Mission 1
+-- Mission 10
 function Mission10Part1()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     SpawnBoat()
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
@@ -923,6 +941,7 @@ function Mission10Part1()
 end
 
 function Mission10Part2()
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission10Coords2)
@@ -950,7 +969,7 @@ function Mission10Part2()
 end
 
 function Mission10Part3()
-
+    RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
     Citizen.Wait(500)
         StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
         AddPointToGpsMultiRoute(Config.Mission10Coords3)
