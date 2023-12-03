@@ -65,14 +65,21 @@ end)
 
 RegisterNetEvent('mms-shipmissions:client:getmission')
 AddEventHandler('mms-shipmissions:client:getmission', function()
+    if Config.MissionLimit == true then
+    if missionamount <= Config.Maxmission and shipmissionactive == 0 then
+        shipmissionactive = math.random(1,10)
+        RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
+        StartMission()
+    end
+    elseif Config.MissionLimit == false then
     if shipmissionactive == 0 then
-        shipmissionactive = math.random(1,1)
+        shipmissionactive = math.random(1,10)
         RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
         StartMission()
     elseif shipmissionactive >=1 then
         RSGCore.Functions.Notify('Du hast bereits eine Mission Angenommen!', 'error')
     end
-    
+end
 end)
 
 RegisterNetEvent('mms-shipmissions:client:finishmission')
@@ -145,23 +152,23 @@ function StartMission()
     if shipmissionactive == 1 then
         Mission1Part1()
     elseif shipmissionactive == 2 then
-        --Mission2Part1()
+        Mission2Part1()
     elseif shipmissionactive == 3 then
-        --Mission3Part1()
+        Mission3Part1()
     elseif shipmissionactive == 4 then
-        --Mission4Part1()
+        Mission4Part1()
     elseif shipmissionactive == 5 then
-        --Mission5Part1()
+        Mission5Part1()
     elseif shipmissionactive == 6 then
-        --Mission6Part1()
+        Mission6Part1()
     elseif shipmissionactive == 7 then
-        --Mission7Part1()
+        Mission7Part1()
     elseif shipmissionactive == 8 then
-        --Mission8Part1()
+        Mission8Part1()
     elseif shipmissionactive == 9 then
-        --Mission9Part1()
+        Mission9Part1()
     elseif shipmissionactive == 10 then
-        --Mission10Part1()
+        Mission10Part1()
     end
 end
 

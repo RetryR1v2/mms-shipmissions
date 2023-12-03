@@ -1,5 +1,5 @@
 Config = {}
-Config.testpromptcoords = vector3(-703.30, -1242.89, 44.76)
+
 --Setup as many places as you want Brennerei
 Config.hafen = {
     { 
@@ -15,6 +15,9 @@ Config.hafen = {
 }
 
 Config.Missiontime = 10000  ------!!!DO NOT TOUCH!!!-------
+Config.MissionLimit = true
+Config.Maxmission = 3
+
 
 ---------------Reward Settings---------------
 Config.Dynamicrewards = true  --- Wenn true dann werden min - max Preise genommen WEnn False Wird nur der Noramle Preis genommen
