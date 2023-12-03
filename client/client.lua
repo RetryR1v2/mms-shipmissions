@@ -132,7 +132,6 @@ end)
 
 function StartMission()
     if shipmissionactive == 1 then
-        prompts = 1
         Mission1Part1()
     elseif shipmissionactive == 2 then
         --Mission2Part1()
@@ -171,6 +170,7 @@ function Mission1Part1()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
                     if #(boatpos - Config.Mission1Coords1) < 5.0 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission1Coords1)
@@ -196,6 +196,7 @@ function Mission1Part2()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
                     if #(boatpos - Config.Mission1Coords2) < 5.0 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission1Coords2)
@@ -222,6 +223,7 @@ function Mission1Part3()
         while missionactive == true do
             Citizen.Wait(1000)
                 local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
                     if #(boatpos - Config.Mission1Coords3) < 5.0 then
                         if showgps == true then
                             ClearGpsMultiRoute(Config.Mission1Coords3)
@@ -235,7 +237,742 @@ end
 
 
 
+-- Mission 2
+function Mission2Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission2Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission2Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission2Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
 
+function Mission2Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission2Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission2Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission2Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission2Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission2Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission2Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission2Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission3Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission3Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission3Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission3Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission3Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission3Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission3Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission3Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission3Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission3Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission3Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission3Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission4Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission4Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission4Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission4Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission4Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission4Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission4Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission4Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission4Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission4Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission4Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission4Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission5Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission5Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission5Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission5Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission5Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission5Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission5Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission5Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission5Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission5Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission5Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission5Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission6Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission6Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission6Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission6Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission6Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission6Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission6Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission6Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission6Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission6Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission6Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission6Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission7Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission7Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission7Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission7Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission7Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission7Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission7Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission7Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission7Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission7Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission7Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission7Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission8Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission8Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission8Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission8Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission8Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission8Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission8Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission8Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission8Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission8Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission8Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission8Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission9Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission9Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission9Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission9Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission9Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission9Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission9Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission9Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission9Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission9Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission9Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission9Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
+
+
+-- Mission 1
+function Mission10Part1()
+    SpawnBoat()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission10Coords1)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords1)
+        SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe1, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe1, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission10Coords1) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission10Coords1)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe1')
+                    end
+        end
+end
+
+function Mission10Part2()
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission10Coords2)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe2 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords2)
+        SetBlipSprite(blipaufgabe2, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe2, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe2, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Gehe Fische Fangen!')
+                    if #(boatpos - Config.Mission10Coords2) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission10Coords2)
+                        end
+                        missionactive = false
+                        showgps = false
+                        TriggerEvent('mms-shipmissions:client:aufgabe2')
+                    end
+        end
+end
+
+function Mission10Part3()
+
+    Citizen.Wait(500)
+        StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+        AddPointToGpsMultiRoute(Config.Mission10Coords3)
+        SetGpsMultiRouteRender(true)
+        missionactive = true
+        local showgps = true
+        blipaufgabe3 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords3)
+        SetBlipSprite(blipaufgabe3, GetHashKey(Config.BlipSpriteMissions), true)
+        SetBlipScale(blipaufgabe3, Config.BlipScaleMissions)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blipaufgabe3, Config.BlipNameMissions)
+        while missionactive == true do
+            Citizen.Wait(1000)
+                local boatpos = GetEntityCoords(boat, true)
+                DrawText3D(boatpos.x,boatpos.y,boatpos.z,'Fahre Fischen!')
+                    if #(boatpos - Config.Mission10Coords3) < 5.0 then
+                        if showgps == true then
+                            ClearGpsMultiRoute(Config.Mission10Coords3)
+                        end
+                        TriggerEvent('mms-shipmissions:client:aufgabe3')
+                        missionactive = false
+                        showgps = false
+                    end
+        end
+end
 
 
 
@@ -277,10 +1014,13 @@ AddEventHandler('mms-shipmissions:client:aufgabe1', function()
         if aufgabe1 == 1 and aufgabe2 == 1 and aufgabe3 == 1 then
             RSGCore.Functions.Notify('Du hast alle Aufgaben Abgeschlossen! Hole deine Belohnung!.', 'success')
         end
-        Mission1Part2()
+        if shipmissionactive == 1 then Mission1Part2() elseif shipmissionactive == 2 then Mission2Part2() elseif shipmissionactive == 3 then Mission3Part2()
+        elseif shipmissionactive == 4 then Mission4Part2() elseif shipmissionactive == 5 then Mission5Part2() elseif shipmissionactive == 6 then Mission6Part2()
+        elseif shipmissionactive == 7 then Mission7Part2() elseif shipmissionactive == 8 then Mission8Part2() elseif shipmissionactive == 9 then Mission9Part2()
+        elseif shipmissionactive == 10 then Mission10Part2()
+        end
     end
 end)
-
 ---- Aufgabe 2
 
 RegisterNetEvent('mms-shipmissions:client:aufgabe2')
@@ -317,7 +1057,11 @@ AddEventHandler('mms-shipmissions:client:aufgabe2', function()
         if aufgabe1 == 1 and aufgabe2 == 1 and aufgabe3 == 1 then
             RSGCore.Functions.Notify('Du hast alle Aufgaben Abgeschlossen! Hole deine Belohnung!.', 'success')
         end
-    Mission1Part3()
+        if shipmissionactive == 1 then Mission1Part3() elseif shipmissionactive == 2 then Mission2Part3() elseif shipmissionactive == 3 then Mission3Part3()
+        elseif shipmissionactive == 4 then Mission4Part3() elseif shipmissionactive == 5 then Mission5Part3() elseif shipmissionactive == 6 then Mission6Part3()
+        elseif shipmissionactive == 7 then Mission7Part3() elseif shipmissionactive == 8 then Mission8Part3() elseif shipmissionactive == 9 then Mission9Part3()
+        elseif shipmissionactive == 10 then Mission10Part3()
+        end
     end
 end)
 
@@ -387,3 +1131,12 @@ function SpawnBoat()
     end
 end
 
+function DrawText3D(x, y, z, text)
+    local onScreen,_x,_y=GetScreenCoordFromWorldCoord(x, y, z)
+    SetTextScale(0.35, 0.35)
+    SetTextFontForCurrentCommand(9)
+    SetTextColor(255, 255, 255, 215)
+    local str = CreateVarString(10, "LITERAL_STRING", text, Citizen.ResultAsLong())
+    SetTextCentre(1)
+    DisplayText(str,_x,_y)
+end
