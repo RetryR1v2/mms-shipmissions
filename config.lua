@@ -27,7 +27,7 @@ Config.Moneymax = 20
 
 Config.BlipNameMissions = 'Fange Fische'
 Config.BlipSpriteMissions = 'blip_mg_fishing'
-Config.BlipScaleMissions = 4.5
+Config.BlipScaleMissions = 2.5
  
 ------- Mission1
 

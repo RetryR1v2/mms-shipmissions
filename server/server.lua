@@ -38,7 +38,6 @@ RegisterNetEvent('mms-shipmissions:server:rewards', function(reward)
         if Config.Dynamicrewards == true then
             local Money = math.random(Config.Moneymin,Config.Moneymax)
             Player.Functions.AddMoney('cash',Money)
-            TriggerClientEvent("inventory:client:ItemBox", src, RSGCore.Shared.Items['silberdollar'], "add")
             TriggerClientEvent('ox_lib:notify', src, {title = 'Mission Erfolgreich Abgeschlossen!', description =  'Erfolg', type = 'success' , duration = 5000})
             TriggerClientEvent('ox_lib:notify', src, {title = 'Du erhältst ' .. Money .. ' $ Glückwunsch!!!', description =  'Erfolg', type = 'success' , duration = 5000})
         elseif Config.Dynamicrewards == false then

@@ -7,6 +7,7 @@ local prompts = 0
 local SpawnedBoat = nil
 local boatSpawned = false
 local missionamount = 1
+local radius = 5.0
 ----------------------------Hafen ----------------------
 
 Citizen.CreateThread(function()
