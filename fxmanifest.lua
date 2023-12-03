@@ -4,7 +4,7 @@ game 'rdr3'
 
 author 'Markus'
 description 'mms-shipmissions'
-version '1.1.8'
+version '1.1.9'
 
 client_scripts {
 	'client/client.lua'
