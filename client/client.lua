@@ -70,6 +70,8 @@ AddEventHandler('mms-shipmissions:client:getmission', function()
         shipmissionactive = math.random(1,10)
         RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
         StartMission()
+    else
+        RSGCore.Functions.Notify('Du hast bereits ' .. Config.Maxmission .. ' Missionen Abgeschlosse!', 'error')
     end
     elseif Config.MissionLimit == false then
     if shipmissionactive == 0 then
