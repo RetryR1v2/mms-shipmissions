@@ -9,6 +9,10 @@ local boatSpawned = false
 local missionamount = 1
 local radius = 5.0
 local missionactive = false
+local player = PlayerPedId()
+local id = PlayerId()
+local name = GetPlayerName(id)
+
 ----------------------------Hafen ----------------------
 
 Citizen.CreateThread(function()
@@ -67,7 +71,7 @@ RegisterNetEvent('mms-shipmissions:client:getmission')
 AddEventHandler('mms-shipmissions:client:getmission', function()
     if Config.MissionLimit == true then
     if missionamount <= Config.Maxmission and shipmissionactive == 0 then
-        shipmissionactive = math.random(1,10)
+        shipmissionactive = math.random(1,1)
         RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
         StartMission()
     else
@@ -75,7 +79,7 @@ AddEventHandler('mms-shipmissions:client:getmission', function()
     end
     elseif Config.MissionLimit == false then
     if shipmissionactive == 0 then
-        shipmissionactive = math.random(1,10)
+        shipmissionactive = math.random(1,1)
         RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
         StartMission()
     elseif shipmissionactive >=1 then
@@ -99,7 +103,9 @@ AddEventHandler('mms-shipmissions:client:finishmission', function()
         shipmissionactive = 0
         missionactive = false
         showgps = false
+        lib.hideTextUI()
         missionamount = missionamount + 1
+        UpdateDB()
         TriggerServerEvent('mms-shipmissions:server:rewards' , reward)
     elseif shipmissionactive >=1 and aufgabe1 == 0 then
         RSGCore.Functions.Notify('Du hast nicht alle Aufgaben erledigt!', 'error') 
@@ -129,6 +135,7 @@ AddEventHandler('mms-shipmissions:client:abortmission', function()
         aufgabe2 = 0
         aufgabe3 = 0
         DeleteVehicle(boat)
+        lib.hideTextUI()
         SpawnedBoat = nil
         boatSpawned = false
         missionactive = false
@@ -174,6 +181,7 @@ function StartMission()
     end
 end
 
+
 -- Mission 1
 function Mission1Part1()
     RSGCore.Functions.Notify('Fahre raus auf See und Fange Fische!', 'info')
@@ -183,6 +191,7 @@ function Mission1Part1()
         AddPointToGpsMultiRoute(Config.Mission1Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission1Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -196,6 +205,7 @@ function Mission1Part1()
                             ClearGpsMultiRoute(Config.Mission1Coords1)
                         end
                         missionactive = false
+                        
                         showgps = false
                         TriggerEvent('mms-shipmissions:client:aufgabe1')
                     end
@@ -265,6 +275,7 @@ function Mission2Part1()
         AddPointToGpsMultiRoute(Config.Mission2Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission2Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -346,6 +357,7 @@ function Mission3Part1()
         AddPointToGpsMultiRoute(Config.Mission3Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission3Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -427,6 +439,7 @@ function Mission4Part1()
         AddPointToGpsMultiRoute(Config.Mission4Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission4Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -509,6 +522,7 @@ function Mission5Part1()
         AddPointToGpsMultiRoute(Config.Mission5Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission5Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -591,6 +605,7 @@ function Mission6Part1()
         AddPointToGpsMultiRoute(Config.Mission6Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission6Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -674,6 +689,7 @@ function Mission7Part1()
         AddPointToGpsMultiRoute(Config.Mission7Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission7Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -757,6 +773,7 @@ function Mission8Part1()
         AddPointToGpsMultiRoute(Config.Mission8Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission8Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -841,6 +858,7 @@ function Mission9Part1()
         AddPointToGpsMultiRoute(Config.Mission9Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission9Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -928,6 +946,7 @@ function Mission10Part1()
         AddPointToGpsMultiRoute(Config.Mission10Coords1)
         SetGpsMultiRouteRender(true)
         missionactive = true
+        lib.showTextUI('Fahre auf See und Fange Fische')
         local showgps = true
         blipaufgabe1 = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, Config.Mission10Coords1)
         SetBlipSprite(blipaufgabe1, GetHashKey(Config.BlipSpriteMissions), true)
@@ -1131,6 +1150,8 @@ AddEventHandler('mms-shipmissions:client:aufgabe3', function()
         aufgabe3 = 1
         if aufgabe1 == 1 and aufgabe2 == 1 and aufgabe3 == 1 then
             RSGCore.Functions.Notify('Du hast alle Aufgaben Abgeschlossen! Hole deine Belohnung!.', 'success')
+            lib.hideTextUI()
+            lib.showTextUI('Fahre zurück zum Hafen!')
         end
     elseif aufgabe3 == 1 then
         RSGCore.Functions.Notify('Diese aufgabe ist Bereits Erledigt.', 'info')
@@ -1162,12 +1183,9 @@ function SpawnBoat()
     end
 end
 
-function DrawText3D(x, y, z, text)
-    local onScreen,_x,_y=GetScreenCoordFromWorldCoord(x, y, z)
-    SetTextScale(0.35, 0.35)
-    SetTextFontForCurrentCommand(9)
-    SetTextColor(255, 255, 255, 215)
-    local str = CreateVarString(10, "LITERAL_STRING", text, Citizen.ResultAsLong())
-    SetTextCentre(1)
-    DisplayText(str,_x,_y)
+
+function UpdateDB()
+    local count = 1
+    local username = name
+    TriggerServerEvent('mms-shipmissions:server:updatedb',username,count)
 end

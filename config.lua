@@ -14,7 +14,7 @@ Config.hafen = {
     -- add more as required
 }
 
-Config.Missiontime = 10000  ------!!!DO NOT TOUCH!!!-------
+Config.Missiontime = 1000  ------!!!DO NOT TOUCH!!!-------
 Config.MissionLimit = true
 Config.Maxmission = 3
 

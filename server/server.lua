@@ -12,7 +12,8 @@ end
 local function CheckVersion()
     PerformHttpRequest('https://raw.githubusercontent.com/RetryR1v2/mms-shipmissions/main/version.txt', function(err, text, headers)
         local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
-
+        print(vorname)
+        print(nachname)
         if not text then 
             versionCheckPrint('error', 'Currently unable to run a version check.')
             return 
@@ -53,7 +54,24 @@ RegisterNetEvent('mms-shipmissions:server:rewards', function(reward)
 
 
 
+--------------Mission Count
+RegisterNetEvent('mms-shipmissions:server:updatedb', function(username,count)
+    local result = MySQL.prepare.await("SELECT COUNT(*) as count FROM counter WHERE username = ?", { username })
+        if result == 0 then
+            MySQL.insert('INSERT INTO counter(username, count) VALUES(@username, @count)', {
+            ['@username'] = username,
+            ['@count'] = count,
+        })
+    elseif result == 1 then
+        local getcount = MySQL.prepare.await("SELECT COUNT(*) as count FROM counter WHERE count = ?", { count })
+        if getcount >= 1 then
+            local addcount = getcount + 1
+            MySQL.update('UPDATE counter SET count = ? WHERE username = ? ',{addcount, username})
+        end
+    end
+end)
 
+--MySQL.update('UPDATE saloontender_stock SET stock = ? WHERE saloontender = ? AND item = ?',{stockadd, job, receive})
 --------------------------------------------------------------------------------------------------
 -- start version check
 --------------------------------------------------------------------------------------------------

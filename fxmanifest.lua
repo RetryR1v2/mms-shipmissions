@@ -4,14 +4,15 @@ game 'rdr3'
 
 author 'Markus'
 description 'mms-shipmissions'
-version '1.2.5'
+version '1.2.7'
 
 client_scripts {
 	'client/client.lua'
 }
 
 server_scripts {
-	'server/server.lua'
+	'server/server.lua',
+    '@oxmysql/lib/MySQL.lua',
 }
 
 shared_scripts {
