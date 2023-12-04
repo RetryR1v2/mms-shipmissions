@@ -52,18 +52,32 @@ RegisterNetEvent('mms-shipmissions:client:hafenmenu', function()
                     event = 'mms-shipmissions:client:finishmission',
                 },
                 {
+                    title = ('Missionen Absolviert!'),
+                    description = ('Anzahl absolvierter Missionen!'),
+                    icon = 'fas fa-info',
+                    event = 'mms-shipmissions:client:missioncount',
+                },
+                {
                     title = ('Mission Abbrechen!'),
                     description = ('Breche die Mission ab!' ),
                     icon = 'fas fa-x',
                     event = 'mms-shipmissions:client:abortmission',
-                },      
+                },
             }
         }
     )
     lib.showContext('hafenmenu')
 end)
 
+RegisterNetEvent('mms-shipmissions:client:missioncount')
+AddEventHandler('mms-shipmissions:client:missioncount', function()
+    local username = name
+    TriggerServerEvent('mms-shipmissions:server:missioncount',username)
+end)
 
+RegisterNetEvent('mms-shipmissions:client:ReturnCount', function(missioncount)
+    RSGCore.Functions.Notify('Du hast bereits ' .. missioncount .. ' Missionen Abgeschlosse!', 'info')
+end)
 
 
 
@@ -71,7 +85,7 @@ RegisterNetEvent('mms-shipmissions:client:getmission')
 AddEventHandler('mms-shipmissions:client:getmission', function()
     if Config.MissionLimit == true then
     if missionamount <= Config.Maxmission and shipmissionactive == 0 then
-        shipmissionactive = math.random(1,1)
+        shipmissionactive = math.random(1,10)
         RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
         StartMission()
     else
@@ -79,7 +93,7 @@ AddEventHandler('mms-shipmissions:client:getmission', function()
     end
     elseif Config.MissionLimit == false then
     if shipmissionactive == 0 then
-        shipmissionactive = math.random(1,1)
+        shipmissionactive = math.random(1,10)
         RSGCore.Functions.Notify('Du Startest eine Mission!', 'success')
         StartMission()
     elseif shipmissionactive >=1 then

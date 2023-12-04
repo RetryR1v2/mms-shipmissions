@@ -14,7 +14,7 @@ Config.hafen = {
     -- add more as required
 }
 
-Config.Missiontime = 1000  ------!!!DO NOT TOUCH!!!-------
+Config.Missiontime = 10000  ------!!!DO NOT TOUCH!!!-------
 Config.MissionLimit = true
 Config.Maxmission = 3
 
@@ -33,10 +33,13 @@ Config.BlipSpriteMissions = 'blip_mg_fishing'
 Config.BlipScaleMissions = 2.5
  
 ------- Mission1
-
 Config.Mission1Coords1 = vector3(-537.11, -1210.37, 40.57)
 Config.Mission1Coords2 = vector3(-634.34, -1033.01, 40.57)
 Config.Mission1Coords3 = vector3(-551.02, -908.51, 40.57)
+
+--Config.Mission1Coords1 = vector3(-645.12, -1250.54, 40.57)   DEBUG CORDS
+--Config.Mission1Coords2 = vector3(-635.12, -1250.54, 40.57)   DEBUG CORDS
+--Config.Mission1Coords3 = vector3(-655.12, -1250.54, 40.57)   DEBUG CORDS
 
 
 ------- Mission 2

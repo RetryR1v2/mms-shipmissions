@@ -12,8 +12,7 @@ end
 local function CheckVersion()
     PerformHttpRequest('https://raw.githubusercontent.com/RetryR1v2/mms-shipmissions/main/version.txt', function(err, text, headers)
         local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
-        print(vorname)
-        print(nachname)
+
         if not text then 
             versionCheckPrint('error', 'Currently unable to run a version check.')
             return 
@@ -57,21 +56,43 @@ RegisterNetEvent('mms-shipmissions:server:rewards', function(reward)
 --------------Mission Count
 RegisterNetEvent('mms-shipmissions:server:updatedb', function(username,count)
     local result = MySQL.prepare.await("SELECT COUNT(*) as count FROM counter WHERE username = ?", { username })
-        if result == 0 then
+    if result == 0 then
             MySQL.insert('INSERT INTO counter(username, count) VALUES(@username, @count)', {
             ['@username'] = username,
             ['@count'] = count,
         })
-    elseif result == 1 then
-        local getcount = MySQL.prepare.await("SELECT COUNT(*) as count FROM counter WHERE count = ?", { count })
-        if getcount >= 1 then
-            local addcount = getcount + 1
-            MySQL.update('UPDATE counter SET count = ? WHERE username = ? ',{addcount, username})
-        end
+    else
+        MySQL.query('SELECT * FROM counter WHERE username = ? ',{username} , function(result2)
+            --print(result2[1].count)
+            if result2[1].count >=1 then
+                local newcount = result2[1].count + 1
+                MySQL.update('UPDATE counter SET count = ? WHERE username = ?',{newcount, username})
+            end
+        end)
     end
 end)
 
---MySQL.update('UPDATE saloontender_stock SET stock = ? WHERE saloontender = ? AND item = ?',{stockadd, job, receive})
+RegisterNetEvent('mms-shipmissions:server:missioncount', function(username)
+    local src = source
+    MySQL.query('SELECT * FROM counter WHERE username = ? ',{username} , function(result2)
+        if result2[1].count >=1 then
+        local missioncount = result2[1].count
+        TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
+        elseif result2[1].count == 0 then
+            local missioncount = result2[1].count
+            TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
+        else
+            MySQL.insert('INSERT INTO counter(username, count) VALUES(@username, @count)', {
+                ['@username'] = username,
+                ['@count'] = 0,
+            })
+            local missioncount = 0
+            TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
+        end
+    end)
+end)
+
+
 --------------------------------------------------------------------------------------------------
 -- start version check
 --------------------------------------------------------------------------------------------------
