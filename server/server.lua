@@ -64,7 +64,7 @@ RegisterNetEvent('mms-shipmissions:server:updatedb', function(username,count)
     else
         MySQL.query('SELECT * FROM counter WHERE username = ? ',{username} , function(result2)
             --print(result2[1].count)
-            if result2[1].count >=1 then
+            if result2[1].count >=0 then
                 local newcount = result2[1].count + 1
                 MySQL.update('UPDATE counter SET count = ? WHERE username = ?',{newcount, username})
             end
