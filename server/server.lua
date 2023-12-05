@@ -47,49 +47,52 @@ RegisterNetEvent('mms-shipmissions:server:rewards', function(reward)
             TriggerClientEvent('ox_lib:notify', src, {title = 'Mission Erfolgreich Abgeschlossen!', description =  'Erfolg', type = 'success' , duration = 5000})
             TriggerClientEvent('ox_lib:notify', src, {title = 'Du erhältst ' .. Config.Money .. ' $. Glückwunsch!!!', description =  'Erfolg', type = 'success' , duration = 5000})
         end
-    
     end
-    end)
+end)
 
 
 
 --------------Mission Count
-RegisterNetEvent('mms-shipmissions:server:updatedb', function(username,count)
-    local result = MySQL.prepare.await("SELECT COUNT(*) as count FROM counter WHERE username = ?", { username })
+RegisterNetEvent('mms-shipmissions:server:updatedb', function(vorname, nachname, citizenid,count)
+    local result = MySQL.prepare.await("SELECT COUNT(*) as count FROM mms_shipmissions WHERE citizenid = ?", { citizenid })
     if result == 0 then
-            MySQL.insert('INSERT INTO counter(username, count) VALUES(@username, @count)', {
-            ['@username'] = username,
-            ['@count'] = count,
+            MySQL.insert('INSERT INTO mms_shipmissions(vorname, nachname, citizenid, count) VALUES(@vorname, @nachname, @citizenid, @count)', {
+                ['@vorname'] = vorname,
+                ['@nachname'] = nachname,
+                ['@citizenid'] = citizenid,
+                ['@count'] = count,
         })
     else
-        MySQL.query('SELECT * FROM counter WHERE username = ? ',{username} , function(result2)
+        MySQL.query('SELECT * FROM mms_shipmissions WHERE citizenid = ? ',{citizenid} , function(result2)
             --print(result2[1].count)
             if result2[1].count >=0 then
                 local newcount = result2[1].count + 1
-                MySQL.update('UPDATE counter SET count = ? WHERE username = ?',{newcount, username})
+                MySQL.update('UPDATE mms_shipmissions SET count = ? WHERE citizenid = ?',{newcount, citizenid})
             end
         end)
     end
 end)
 
-RegisterNetEvent('mms-shipmissions:server:missioncount', function(username)
+RegisterNetEvent('mms-shipmissions:server:missioncount', function(vorname, nachname, citizenid,count)
     local src = source
-    MySQL.query('SELECT * FROM counter WHERE username = ? ',{username} , function(result2)
-        if result2[1].count >=1 then
-        local missioncount = result2[1].count
-        TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
-        elseif result2[1].count == 0 then
-            local missioncount = result2[1].count
-            TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
-        else
-            MySQL.insert('INSERT INTO counter(username, count) VALUES(@username, @count)', {
-                ['@username'] = username,
+    local result = MySQL.prepare.await("SELECT COUNT(*) as count FROM mms_shipmissions WHERE citizenid = ?", { citizenid })
+        if result == 0 then
+            MySQL.insert('INSERT INTO mms_shipmissions(vorname, nachname, citizenid, count) VALUES(@vorname, @nachname, @citizenid, @count)', {
+                ['@vorname'] = vorname,
+                ['@nachname'] = nachname,
+                ['@citizenid'] = citizenid,
                 ['@count'] = 0,
             })
             local missioncount = 0
             TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
-        end
-    end)
+        else
+            MySQL.query('SELECT * FROM mms_shipmissions WHERE citizenid = ? ',{citizenid} , function(result2)
+                if result2[1].count >=0 then
+                local missioncount = result2[1].count
+                TriggerClientEvent('mms-shipmissions:client:ReturnCount', src, missioncount)
+                end
+        end)
+end
 end)
 
 
